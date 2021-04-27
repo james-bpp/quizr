@@ -43,7 +43,7 @@ define( 'QUIZR_BASE_NAME', plugin_basename( __FILE__ ) );
 define( 'QUIZR_BASE_PATH', plugin_dir_path( __DIR__ ) . 'quizr' );
 define( 'QUIZR_ADMIN_PATH', plugin_dir_path( __DIR__ ) . 'quizr/admin' );
 define( 'QUIZR_PUBLIC_PATH', plugin_dir_path( __DIR__ ) . 'quizr/public' );
-define( 'QUIZR_LOG_PATH', plugin_dir_path( __DIR__ ) . 'quizr/logs/debug.log' );
+
 
 /**
  * The code that runs during plugin activation.

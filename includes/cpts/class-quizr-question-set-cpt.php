@@ -13,7 +13,9 @@ class Quizr_Question_Set_Cpt {
                 'name' => __( 'Quizr Question Sets', 'quizr' ),
                 'singular' => __( 'Quizr Question Set', 'quizr' )
             ),
-            'public' => true
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array( 'title', 'thumbnail' )
         ) );
 
     }

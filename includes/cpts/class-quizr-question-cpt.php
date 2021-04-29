@@ -17,8 +17,29 @@ class Quizr_Question_Cpt {
                 ),
                 'public' => true,
                 'has_archive' => true,
-                'show_in_menu' => false
+                'show_in_menu' => true
             )
+        );
+
+    }
+
+    public function add_meta_boxes(){
+
+        add_meta_box(
+            'quizr-question-set',
+            __( 'Question Set', 'quizr' ),
+            function( $post ){
+
+                ?>
+                    <p>This is a meta box</p>
+                <?php
+
+            },
+            static::CPT_NAME,
+            'side',
+            'default'
+
+
         );
 
     }

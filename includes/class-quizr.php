@@ -125,6 +125,7 @@ class Quizr {
 
 
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cpts/class-quizr-question-set-cpt.php';
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cpts/class-quizr-question-cpt.php';
 
 
 
@@ -167,6 +168,9 @@ class Quizr {
 
         $quizr_question_set_cpt = new Quizr_Question_Set_Cpt();
         $this->loader->add_action( 'init', $quizr_question_set_cpt, 'register_custom_post_type' );
+
+        $quizr_question_cpt = new Quizr_Question_Cpt();
+        $this->loader->add_action( 'init', $quizr_question_cpt, 'register_custom_post_type' );
 
 
 	}

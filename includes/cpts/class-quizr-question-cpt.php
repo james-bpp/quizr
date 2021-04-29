@@ -17,6 +17,7 @@ class Quizr_Question_Cpt {
                 ),
                 'public' => true,
                 'has_archive' => true,
+                'show_in_menu' => false
             )
         );
 

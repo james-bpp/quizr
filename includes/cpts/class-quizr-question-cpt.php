@@ -28,20 +28,17 @@ class Quizr_Question_Cpt {
         add_meta_box(
             'quizr-question-set',
             __( 'Question Set', 'quizr' ),
-            function( $post ){
-
-                ?>
-                    <p>This is a meta box</p>
-                <?php
-
-            },
+            array( $this, 'render_question_set_meta_box'),
             static::CPT_NAME,
             'side',
             'default'
-
-
         );
+    }
 
+    public function render_question_set_meta_box( $post ){
+         ?>
+            <p>This is a meta box</p>
+        <?php
     }
 
 }

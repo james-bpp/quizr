@@ -36,6 +36,15 @@ class Quizr_Question_Cpt {
     }
 
     public function render_question_set_meta_box( $post ){
+
+        $question_sets = get_posts( 
+            array(
+                'post_type' => 'quizr_question_set'
+            )
+        );
+
+        print_r( $question_sets );
+
          ?>
             <p>This is a meta box</p>
         <?php

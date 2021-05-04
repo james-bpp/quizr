@@ -57,4 +57,17 @@ class Quizr_Question_Cpt {
         <?php
     }
 
+    public function save_custom_meta_data( $id ){
+        echo '<pre>';
+        print_r( $_POST );
+        echo '</pre>';
+
+        $post_data = sanitize_post( $_POST );
+        
+        if( array_key_exists( 'quizr_question_set_id', $post_data) ){
+            update_post_meta( $id, 'quizr_question_set_id', $post_data['quizr_question_set_id']);
+        }
+        die();
+    }
+
 }

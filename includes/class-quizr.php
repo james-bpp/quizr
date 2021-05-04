@@ -172,6 +172,7 @@ class Quizr {
         $quizr_question_cpt = new Quizr_Question_Cpt();
         $this->loader->add_action( 'init', $quizr_question_cpt, 'register_custom_post_type' );
         $this->loader->add_action( 'add_meta_boxes', $quizr_question_cpt, 'add_meta_boxes');
+        $this->loader->add_action( 'save_post', $quizr_question_cpt, 'save_custom_meta_data');
 
 
 	}

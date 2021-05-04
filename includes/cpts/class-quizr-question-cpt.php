@@ -43,10 +43,17 @@ class Quizr_Question_Cpt {
             )
         );
 
-        print_r( $question_sets );
+      //  print_r( $question_sets );
 
          ?>
-            <p>This is a meta box</p>
+
+            <select id="quizr_question_set_id" name="quizr_question_set_id" class="widefat">
+               <option value=""></option>
+               <?php foreach( $question_sets as $qs){ ?>
+                    <option value="<?php echo esc_html( $qs->ID); ?>" ><?php echo esc_html( $qs->post_title); ?></option>
+               <?php } ?>
+            </select>
+
         <?php
     }
 

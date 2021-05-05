@@ -48,7 +48,7 @@ class Quizr_Question_Cpt {
         wp_nonce_field( 'quizr_question_set_id_nonce', 'quizr_question_set_id_nonce_' . $post->ID);
 
          ?>
-
+        <div class="quizr-select-group-flex">
             <select id="quizr_question_set_id" name="quizr_question_set_id" class="widefat">
                <option value=""></option>
                <?php foreach( $question_sets as $qs){ ?>
@@ -59,6 +59,9 @@ class Quizr_Question_Cpt {
                     <?php echo esc_html( $qs->post_title); ?></option>
                <?php } ?>
             </select>
+            <a href="<?php echo get_edit_post_link( $meta_value ); ?>" 
+                class="button button-secondary">View</a>
+        </div>
 
         <?php
     }

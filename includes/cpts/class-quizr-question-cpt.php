@@ -45,6 +45,8 @@ class Quizr_Question_Cpt {
 
       //  print_r( $question_sets );
 
+        wp_nonce_field( 'quizr_question_set_id_nonce', 'quizr_question_set_id_nonce_' . $post->ID);
+
          ?>
 
             <select id="quizr_question_set_id" name="quizr_question_set_id" class="widefat">
@@ -74,9 +76,11 @@ class Quizr_Question_Cpt {
         if( $post->post_type !== static::CPT_NAME ) return;
 
         $post_data = sanitize_post( $_POST );
-        
-        if( array_key_exists( 'quizr_question_set_id', $post_data) ){
-            update_post_meta( $id, 'quizr_question_set_id', $post_data['quizr_question_set_id']);
+
+        if( isset( $post_data['quizr_question_set_id_nonce_'. $id]) && wp_verify_nonce( $post_data['quizr_question_set_id_nonce_' . $id], 'quizr_question_set_id_nonce') ){
+            if( array_key_exists( 'quizr_question_set_id', $post_data) ){
+                update_post_meta( $id, 'quizr_question_set_id', $post_data['quizr_question_set_id']);
+            }
         }
     
     }

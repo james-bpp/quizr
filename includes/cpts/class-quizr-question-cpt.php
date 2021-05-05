@@ -58,16 +58,27 @@ class Quizr_Question_Cpt {
     }
 
     public function save_custom_meta_data( $id ){
-        echo '<pre>';
-        print_r( $_POST );
-        echo '</pre>';
+
+        global $post;
+
+        if( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){
+            return $id;
+        }
+
+        if( ! current_user_can( 'edit_post', $id ) ){
+            return $id;
+        }
+
+        if( ! is_object( $post ) ) return;
+
+        if( $post->post_type !== static::CPT_NAME ) return;
 
         $post_data = sanitize_post( $_POST );
         
         if( array_key_exists( 'quizr_question_set_id', $post_data) ){
             update_post_meta( $id, 'quizr_question_set_id', $post_data['quizr_question_set_id']);
         }
-        die();
+    
     }
 
 }

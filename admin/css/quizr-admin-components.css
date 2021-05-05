@@ -1,0 +1,7 @@
+ .quizr-select-group-flex {
+     display: flex;
+ }
+
+ .quizr-select-group-flex select {
+     margin-right: 3px;
+ }

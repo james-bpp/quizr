@@ -7,6 +7,12 @@ class Quizr_Question_Cpt {
 
     const CPT_NAME = 'quizr_question';
 
+    private $mv;
+
+    public function __construct(){
+        $this->mv = -1;
+    }
+
     public function register_custom_post_type(){
 
         register_post_type( static::CPT_NAME, 
@@ -37,13 +43,24 @@ class Quizr_Question_Cpt {
 
     public function render_question_set_meta_box( $post ){
 
+        global $pagenow;
+
         $question_sets = get_posts( 
             array(
                 'post_type' => 'quizr_question_set'
             )
         );
 
-        $meta_value = get_post_meta( $post->ID, 'quizr_question_set_id', true);
+        if( $pagenow === 'post-new.php')
+        {
+            $meta_value = $this->mv;
+        }
+        else 
+        {
+            $meta_value = get_post_meta( $post->ID, 'quizr_question_set_id', true);
+        }
+
+        
 
         wp_nonce_field( 'quizr_question_set_id_nonce', 'quizr_question_set_id_nonce_' . $post->ID);
 
@@ -96,6 +113,13 @@ class Quizr_Question_Cpt {
             }
         }
     
+    }
+
+    public function load_query_params(){
+
+        if( isset( $_GET['post_type'] ) && $_GET['post_type'] === 'quizr_question' ){
+            if( isset( $_GET['question_set_id'] ) ) $this->mv = (int) $_GET['question_set_id'];
+        }
     }
 
 }

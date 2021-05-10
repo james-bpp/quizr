@@ -46,9 +46,9 @@ class Quizr_Question_Set_Cpt {
             )
         );
 
-        print_r( $questions );
+        require_once QUIZR_ADMIN_PATH . '/partials/quizr-admin-cpt-question-set-qmb.php';
 
-        echo '<p>This is a metabox</p>';
+        
     }
 
 }

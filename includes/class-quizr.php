@@ -123,7 +123,7 @@ class Quizr {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-quizr-public.php';
 
 
-
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-quizr-migrate.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cpts/class-quizr-question-set-cpt.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cpts/class-quizr-question-cpt.php';
 
@@ -165,6 +165,9 @@ class Quizr {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+
+        $quizr_migrate = new Quizr_Migrate();
+        $this->loader->add_action( 'plugins_loaded', $quizr_migrate, 'up');
 
         $quizr_question_set_cpt = new Quizr_Question_Set_Cpt();
         $this->loader->add_action( 'init', $quizr_question_set_cpt, 'register_custom_post_type' );

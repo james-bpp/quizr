@@ -167,7 +167,7 @@ class Quizr {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
         $quizr_migrate = new Quizr_Migrate();
-        $this->loader->add_action( 'plugins_loaded', $quizr_migrate, 'up');
+        $this->loader->add_action( 'plugins_loaded', $quizr_migrate, 'update_db_check');
 
         $quizr_question_set_cpt = new Quizr_Question_Set_Cpt();
         $this->loader->add_action( 'init', $quizr_question_set_cpt, 'register_custom_post_type' );

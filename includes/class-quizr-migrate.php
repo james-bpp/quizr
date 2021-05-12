@@ -4,8 +4,17 @@ if( ! defined('ABSPATH')) exit;
 
 class Quizr_Migrate {
 
-    public function up(){
+    public function update_db_check(){
 
+        if( get_site_option( 'quizr_db_version', '0.0.0') != QUIZR_DB_VERSION) {
+            $this->up();
+            update_option('quizr_db_version', QUIZR_DB_VERSION );
+        }
+
+    }
+
+    public function up(){
+        
         global $wpdb;
 
         $table_name = $wpdb->prefix . 'quizr_answers';

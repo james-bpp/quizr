@@ -35,9 +35,9 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'QUIZR_VERSION', '1.3.1' );
+define( 'QUIZR_VERSION', '1.3.2' );
 
-define( 'QUIZR_DB_VERSION', '1.0.0' );
+define( 'QUIZR_DB_VERSION', '1.0.1' );
 
 define( 'QUIZR_BASE_NAME', plugin_basename( __FILE__ ) );
 define( 'QUIZR_BASE_PATH', plugin_dir_path( __DIR__ ) . 'quizr' );

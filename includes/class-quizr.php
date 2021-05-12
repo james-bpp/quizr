@@ -126,6 +126,7 @@ class Quizr {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-quizr-migrate.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cpts/class-quizr-question-set-cpt.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cpts/class-quizr-question-cpt.php';
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/database/class-quizr-answer-table.php';
 
 
 

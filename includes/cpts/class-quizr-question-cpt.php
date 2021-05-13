@@ -8,9 +8,11 @@ class Quizr_Question_Cpt {
     const CPT_NAME = 'quizr_question';
 
     private $mv;
+    private $quizr_answers_table;
 
-    public function __construct(){
+    public function __construct( Quizr_Answers_Table $quizr_answers_table){
         $this->mv = -1;
+        $this->quizr_answers_table = $quizr_answers_table;
     }
 
     public function register_custom_post_type(){
@@ -39,6 +41,15 @@ class Quizr_Question_Cpt {
             'side',
             'default'
         );
+
+        add_meta_box(
+            'quizr-answers',
+            __( 'Answers', 'quizr' ),
+            array( $this, 'render_answers_metabox'),
+            static::CPT_NAME,
+            'advanced',
+            'default'
+        );
     }
 
     public function render_question_set_meta_box( $post ){
@@ -63,6 +74,15 @@ class Quizr_Question_Cpt {
         wp_nonce_field( 'quizr_question_set_id_nonce', 'quizr_question_set_id_nonce_' . $post->ID);
 
         require_once QUIZR_ADMIN_PATH . '/partials/quizr-admin-cpt-question-qsmb.php';
+    }
+
+    public function render_answers_metabox( $post ){
+        
+        $post_id = $post->ID;
+        $answers = $this->quizr_answers_table->get( $post_id );
+      
+        require_once QUIZR_ADMIN_PATH . '/partials/quizr-admin-cpt-question-amb.php';
+
     }
 
     public function save_custom_meta_data( $id ){

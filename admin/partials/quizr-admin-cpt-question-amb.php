@@ -1,4 +1,4 @@
-<div>
+<div class="quizr-admin-answer-container">
     <table class="widefat">
         <thead>
             <tr>
@@ -12,7 +12,7 @@
 
                 <tr>
                     <td>
-                        <input name="quizr_description" type="text" value="<?php echo $value->description; ?>" class="widefat" />
+                        <input name="quizr_description" type="text" value="<?php echo $value->description; ?>" class="widefat" readonly/>
                     </td>
                     <th class="check-column">
                         <input 

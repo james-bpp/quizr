@@ -80,6 +80,8 @@ class Quizr_Question_Cpt {
         
         $post_id = $post->ID;
         $answers = $this->quizr_answers_table->get( $post_id );
+
+        $quizr_max_answers_per_question = get_option( 'quizr_max_answers_per_question', 6);
       
         require_once QUIZR_ADMIN_PATH . '/partials/quizr-admin-cpt-question-amb.php';
 

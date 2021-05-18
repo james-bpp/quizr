@@ -33,6 +33,25 @@
                 </tr>
 
             <?php } ?>
+
+            <?php for( $i=count($answers); $i<$quizr_max_answers_per_question; $i++) { ?>
+
+                <tr>
+                    <td><input name="somename" class="widefat" value="" type="text" /></td>
+                    <th class="check-column">
+                        <input 
+                            type="radio"
+                            name="quizr_answer_correct"
+                            value=""
+                        
+                        />
+                    </th>
+                    <td></td>
+
+                </tr>
+
+            <?php } ?>
+
         </tbody>
     </table>
 </div>

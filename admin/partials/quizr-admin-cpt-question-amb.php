@@ -12,7 +12,8 @@
 
                 <tr>
                     <td>
-                        <input name="quizr_description" type="text" value="<?php echo $value->description; ?>" class="widefat" readonly/>
+                        <input name="quizr_question_answer[<?php echo $index; ?>][id]" type="hidden" value="<?php echo $value->id; ?>" />
+                        <input name="quizr_question_answer[<?php echo $index; ?>][description]" type="text" value="<?php echo $value->description; ?>" class="widefat" readonly/>
                     </td>
                     <th class="check-column">
                         <input 
@@ -37,12 +38,15 @@
             <?php for( $i=count($answers); $i<$quizr_max_answers_per_question; $i++) { ?>
 
                 <tr>
-                    <td><input name="somename" class="widefat" value="" type="text" /></td>
+                    <td>
+                        <input name="quizr_question_answer[<?php echo $i; ?>][id]" type="hidden" value="-1" />
+                        <input name="quizr_question_answer[<?php echo $i; ?>][description]" type="text" value="" class="widefat" />
+                    </td>
                     <th class="check-column">
                         <input 
                             type="radio"
-                            name="quizr_answer_correct"
-                            value=""
+                            name="quizr_question_answer_correct"
+                            value="<?php echo $i; ?>"
                         
                         />
                     </th>

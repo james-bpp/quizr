@@ -105,6 +105,8 @@ class Quizr_Question_Cpt {
 
         $post_data = sanitize_post( $_POST );
 
+        echo '<pre>'; print_r( $post_data ); echo '</pre>'; die();
+
         if( isset( $post_data['quizr_question_set_id_nonce_'. $id]) && wp_verify_nonce( $post_data['quizr_question_set_id_nonce_' . $id], 'quizr_question_set_id_nonce') ){
             if( array_key_exists( 'quizr_question_set_id', $post_data) ){
                 update_post_meta( $id, 'quizr_question_set_id', $post_data['quizr_question_set_id']);

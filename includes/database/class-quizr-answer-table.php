@@ -24,6 +24,15 @@ class Quizr_Answers_Table {
         return $wpdb->get_results( $sql );
     }
 
+    public function insert( $values ){
+        global $wpdb;
+
+        $wpdb->insert(
+            $this->table_name,
+            $values
+        );
+    }
+
     public function delete( $where, $where_format ){
         global $wpdb;
 

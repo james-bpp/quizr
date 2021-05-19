@@ -119,11 +119,30 @@ class Quizr_Question_Cpt {
             wp_verify_nonce( $post_data['quizr_question_answer_nonce_' . $id ], 'quizr_question_answer_nonce' )){               
 
             if( array_key_exists( 'quizr_question_answer', $post_data ) && is_array( $post_data['quizr_question_answer'])){
-                 echo '<pre>'; print_r( $post_data ); echo '</pre>'; die();
 
                 $where = array( 'quizr_question_id' => $id );
                 $where_format = array( '%d' );
                 $this->quizr_answers_table->delete( $where, $where_format );
+
+                foreach( $post_data['quizr_question_answer'] as $index => $answer){
+
+                    $is_correct = array_key_exists( 'quizr_answer_correct', $post_data )
+                        ? $post_data['quizr_answer_correct']
+                        : -1;
+
+                    if( strlen( $answer['description']) > 0 ){
+                        $values_to_be_inserted = array(
+                            'quizr_question_id' => $id,
+                            'description' => $answer['description'],
+                            'is_correct' => (int) $index === (int) $is_correct
+                                            ? '1'
+                                            : '0'
+                        );
+
+                        $this->quizr_answers_table->insert( $values_to_be_inserted );
+                    }
+
+                }
 
                 
             }

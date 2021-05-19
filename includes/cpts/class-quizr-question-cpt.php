@@ -82,6 +82,8 @@ class Quizr_Question_Cpt {
         $answers = $this->quizr_answers_table->get( $post_id );
 
         $quizr_max_answers_per_question = get_option( 'quizr_max_answers_per_question', 6);
+
+        wp_nonce_field( 'quizr_question_answer_nonce', 'quizr_question_answer_nonce_' . $post_id );
       
         require_once QUIZR_ADMIN_PATH . '/partials/quizr-admin-cpt-question-amb.php';
 
@@ -105,13 +107,29 @@ class Quizr_Question_Cpt {
 
         $post_data = sanitize_post( $_POST );
 
-        echo '<pre>'; print_r( $post_data ); echo '</pre>'; die();
+        
 
         if( isset( $post_data['quizr_question_set_id_nonce_'. $id]) && wp_verify_nonce( $post_data['quizr_question_set_id_nonce_' . $id], 'quizr_question_set_id_nonce') ){
             if( array_key_exists( 'quizr_question_set_id', $post_data) ){
                 update_post_meta( $id, 'quizr_question_set_id', $post_data['quizr_question_set_id']);
             }
         }
+
+        if( isset( $post_data['quizr_question_answer_nonce_' . $id]) && 
+            wp_verify_nonce( $post_data['quizr_question_answer_nonce_' . $id ], 'quizr_question_answer_nonce' )){               
+
+            if( array_key_exists( 'quizr_question_answer', $post_data ) && is_array( $post_data['quizr_question_answer'])){
+                 echo '<pre>'; print_r( $post_data ); echo '</pre>'; die();
+
+                $where = array( 'quizr_question_id' => $id );
+                $where_format = array( '%d' );
+                $this->quizr_answers_table->delete( $where, $where_format );
+
+                
+            }
+        
+        }
+
     
     }
 

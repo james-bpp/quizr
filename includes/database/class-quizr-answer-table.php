@@ -24,4 +24,14 @@ class Quizr_Answers_Table {
         return $wpdb->get_results( $sql );
     }
 
+    public function delete( $where, $where_format ){
+        global $wpdb;
+
+        $wpdb->delete(
+            $this->table_name,
+            $where,
+            $where_format
+        );
+    }
+
 }

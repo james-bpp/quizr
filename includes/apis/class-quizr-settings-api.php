@@ -33,7 +33,12 @@ class Quizr_Settings_Api {
     }
 
     public function add_plugin_page_settings_link( $links ){
+        $links[] = '<a href="' .
+            admin_url( 'options-general.php?page=quizr-settings') .
+            '">' . __('Settings') . '</a>'
+        ;
 
+        return $links;
     }
 
 

@@ -174,7 +174,7 @@ class Quizr {
         $quizr_settings_api = new Quizr_Settings_Api();
         $this->loader->add_action( 'admin_menu', $quizr_settings_api, 'register_options_page' );
         $this->loader->add_action( 'admin_init', $quizr_settings_api, 'register_settings' );
-
+        $this->loader->add_filter( 'plugin_action_links_quizr/quizr.php', $quizr_settings_api, 'add_plugin_page_settings_link' );
 
         $quizr_question_set_cpt = new Quizr_Question_Set_Cpt();
         $this->loader->add_action( 'init', $quizr_question_set_cpt, 'register_custom_post_type' );

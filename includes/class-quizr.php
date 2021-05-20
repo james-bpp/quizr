@@ -127,6 +127,7 @@ class Quizr {
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cpts/class-quizr-question-set-cpt.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cpts/class-quizr-question-cpt.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/apis/class-quizr-settings-api.php';
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/apis/class-quizr-shortcodes-api.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/database/class-quizr-answer-table.php';
 
 
@@ -202,6 +203,9 @@ class Quizr {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+        $quizr_shortcodes_api = new Quizr_Shortcodes_Api();
+        $this->loader->add_action( 'init', $quizr_shortcodes_api, 'register_shortcodes' );
 
 	}
 

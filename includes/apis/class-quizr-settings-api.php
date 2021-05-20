@@ -8,13 +8,13 @@ class Quizr_Settings_Api {
         register_setting(
             'quizr_options_group',
             'quizr_max_answers_per_question',
-            array( 'type' => 'string', 'sanitize_callback' => 'santize_text_field' )
+            array( 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field' )
         );
 
         register_setting(
             'quizr_options_group',
             'quizr_show_cpt_question_in_menu',
-            array( 'type' => 'string', 'sanitize_callback' => 'santize_text_field' )
+            array( 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field' )
         );
     }
 

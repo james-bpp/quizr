@@ -25,7 +25,7 @@ class Quizr_Question_Cpt {
                 ),
                 'public' => true,
                 'has_archive' => true,
-                'show_in_menu' => true
+                'show_in_menu' => (bool) get_option( 'quizr_show_cpt_question_in_menu', 1)
             )
         );
 

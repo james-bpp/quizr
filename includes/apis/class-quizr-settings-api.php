@@ -29,10 +29,7 @@ class Quizr_Settings_Api {
     }
 
     public function render_options_page(){
-        ?>
-            <p>This is a settings page</p>
-
-        <?php
+        require_once QUIZR_ADMIN_PATH . '/partials/quizr-admin-settings-page.php';
     }
 
     public function add_plugin_page_settings_link( $links ){

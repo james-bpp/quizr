@@ -5,6 +5,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class Quizr_Shortcodes_Api {
 
     public function render_quizr_question_set_html( $atts, $content = null ){
+
+        $a = shortcode_atts(
+            array( 'id' => -1 ), $atts
+        );
+
+        print_r( $a );
+
         return '<p>This is a shortcode</p>';
     }
 

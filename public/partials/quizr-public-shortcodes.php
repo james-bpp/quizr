@@ -2,8 +2,8 @@
     <div>
         <article> 
             <div>
-                <aside 
-                    <img src="" />   
+                <aside>
+                    <img src="https://www.wp-plugins.dev.cc/wp-content/uploads/2021/05/quizr-logo.png" />   
                 </aside>   
                 <div>
                     <header> 

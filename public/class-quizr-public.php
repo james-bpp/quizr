@@ -73,7 +73,15 @@ class Quizr_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/quizr-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 
+            $this->plugin_name . '-public-shortcode-question-set', 
+            plugin_dir_url( __FILE__ ) . 'css/quizr-public-shortcode-question-set.css', 
+            array(), 
+            $this->version, 
+            'all' 
+        );
+        
+        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/quizr-public.css', array(), $this->version, 'all' );
 
 	}
 

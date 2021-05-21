@@ -204,7 +204,7 @@ class Quizr {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
-        $quizr_shortcodes_api = new Quizr_Shortcodes_Api();
+        $quizr_shortcodes_api = new Quizr_Shortcodes_Api( new Quizr_Answers_Table() );
         $this->loader->add_action( 'init', $quizr_shortcodes_api, 'register_shortcodes' );
 
 	}

@@ -33,11 +33,11 @@ class Quizr_Shortcodes_Api {
             $question->answers = $this->quizr_answers_table->get( $question->ID );
         }
 
-        echo '<pre>';
-        print_r( $questions );
-        echo '</pre>';
+        ob_start();
 
-        return '<p>This is a shortcode</p>';
+        require_once QUIZR_PUBLIC_PATH . '/partials/quizr-public-shortcodes.php';
+
+        return ob_get_clean();
     }
 
     public function register_shortcodes(){

@@ -1,0 +1,42 @@
+.quizr-qs {
+    position: relative;
+    max-width: 960px;
+    margin: auto;
+}
+
+.quizr-qs-card{
+    box-sizing: border-box;
+    min-height: 200px;
+    margin: 10px auto;
+    position: relative;
+}
+
+.quizr-qs-card__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quizr-qs-card__sidebar {
+    width: 20%;
+    background-color: #9DC96B;
+}
+
+.quizr-qs-card__img {
+    height: 150px;
+    top: 10px;
+    left: 10px;
+    margin: 20px;
+}
+
+.quizr-qs-card__content {
+    background-color: white;
+    width: 60%;
+    padding: 1rem;
+}
+
+.quizr-qs-card__answers {
+    width: 20%;
+    background-color: cadetblue;
+    padding: 1rem;
+}

@@ -1,5 +1,5 @@
 <div class="quizr-qs">         
-    <div class="quizr-qs-intro">
+    <div class="quizr-qs-intro quizr-qs-hide quizr-qs-show--block">
         <article class="quizr-qs-card"> 
             <div class="quizr-qs-card__container">
                 <aside class="quizr-qs-card__sidebar">

@@ -8,7 +8,8 @@
     filter: drop-shadow( 0 10px 10px rgba(0,0,0,0.5));
 }
 
-.quizr-qs-intro__start-quiz{
+.quizr-qs-intro__start-quiz,
+.quizr-qs-results__submit-quiz {
     position: absolute;
     bottom: 10px;
     left: 20px;

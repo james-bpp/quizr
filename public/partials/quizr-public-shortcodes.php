@@ -68,6 +68,29 @@
                 </article>
 
             <?php } ?>
+
+            <article class="quizr-qs-card"> 
+                <div class="quizr-qs-card__container">
+                    <aside class="quizr-qs-card__sidebar">
+                        <img class="quizr-qs-card__img" src="https://www.wp-plugins.dev.cc/wp-content/uploads/2021/05/quizr-logo.png" />   
+                    </aside>   
+                    <div class="quizr-qs-card__content">
+                        <header> 
+                            <h2>Submit Quiz</h2>
+                        </header> 
+                        <section>
+                            <h3>Submit your quiz when you are ready</h3>
+                            <p>You can retake it afterwards</p>  
+                        </section>    
+                    </div>
+                    <div class="quizr-qs-card__answers">
+                        <div class="quizr-qs-card__answer-label">
+                            <p>You can go back and change your answers before submitting</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="quizr-qs-results__submit-quiz" href="">SUBMIT QUIZ</a>
+            </article>
         </div>
     </form>
     

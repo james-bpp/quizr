@@ -46,9 +46,19 @@
                             </section>    
                         </div>
                         <div class="quizr-qs-card__answers">
-                            <div class="quizr-qs-card__answer-label">
-                                <p>When you hover over the card, the answers are revealed here!</p>
-                            </div>
+                            <?php foreach( $q->answers as $value ) { ?>
+                                <div>
+                                    <label class="quizr-qs-card__answer-label">
+                                        <input
+                                            type="radio"
+                                            name="quizr"
+                                            value="<?php echo esc_html( $value->id ); ?>"
+                                        />
+                                        <?php echo $value->description; ?>
+                                    </label>
+
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
                     <a class="quizr-qs-intro__start-quiz" href="">START QUIZ</a>

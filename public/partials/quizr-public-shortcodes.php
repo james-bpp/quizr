@@ -98,5 +98,16 @@
         <a class="quizr-qs-arrows__prev quizr-qs-hide">&#10094;</a>
         <a class="quizr-qs-arrows__next quizr-qs-hide">&#10095;</a>
     </div>
+
+    <ul class="quizr-qs-pips quizr-qs-hide" >
+        <?php foreach( $questions as $q) { ?>
+            <li class="quizr-qs-pips__pip">
+                <a class="quizr-qs-pips__a" href="#">&#8226;</a>
+            </li>
+        <?php } ?>
+        <li class="quizr-qs-pips__pip">
+            <a class="quizr-qs-pips__a" href="#">&#8226;</a>
+        </li>
+    </ul>
     
 </div>

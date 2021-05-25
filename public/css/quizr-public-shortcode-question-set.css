@@ -63,6 +63,10 @@
     padding: 1rem;
 }
 
+.quizr-qs-card__content header h2::before {
+    display: none !important;
+}
+
 .quizr-qs-card__content img {
     max-width: 200px;
     margin: 20px;
@@ -102,6 +106,33 @@
 
 .quizr-qs-arrows__next {
     right: 0;
+}
+
+
+.quizr-qs-pips {
+    position: relative;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    margin: 20px auto;
+}
+
+.quizr-qs-pips__pip {
+    font-size: 50px;
+    line-height: 0.5;
+}
+
+.quizr-qs-pips__a {
+    text-decoration: none !important;
+    color: #90c554;
+    opacity: 0.60;
+    cursor: pointer;
+}
+
+.quizr-qs-pips__a--active {
+    color: blue;
+    list-style: none;
 }
 
 

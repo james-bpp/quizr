@@ -29,7 +29,7 @@
         </article>
     </div>
     <form class="quizr-form" data-id="<?php echo $qs_id; ?>">
-        <div class="quizr-qs-questions quizr-qs-hide quizr-qs-show--block">
+        <div class="quizr-qs-questions quizr-qs-hide">
             <?php foreach( $questions as $key => $q ) { ?>
                 <article class="quizr-qs-card"> 
                     <div class="quizr-qs-card__container">
@@ -93,5 +93,10 @@
             </article>
         </div>
     </form>
+
+    <div class="quizr-qs-arrows quizr-qs-hide">
+        <a class="quizr-qs-arrows__prev quizr-qs-hide">&#10094;</a>
+        <a class="quizr-qs-arrows__next quizr-qs-hide">&#10095;</a>
+    </div>
     
 </div>

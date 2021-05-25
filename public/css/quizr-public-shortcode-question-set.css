@@ -74,6 +74,36 @@
     padding: 1rem;
 }
 
+.quizr-qs-arrows__prev,
+.quizr-qs-arrows__next {
+    position: absolute;
+    top: 100px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    padding: 16px;
+    background-color: #849ae2;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+    opacity: 0.15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+}
+
+.quizr-qs-arrows__prev:hover,
+.quizr-qs-arrows__next:hover {
+    opacity: 0.75;
+    transition: opacity 0.3s;
+}
+
+.quizr-qs-arrows__next {
+    right: 0;
+}
+
 
 .quizr-qs-hide {
     display: none;

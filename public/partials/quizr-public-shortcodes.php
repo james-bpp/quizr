@@ -48,10 +48,13 @@
                         <div class="quizr-qs-card__answers">
                             <?php foreach( $q->answers as $value ) { ?>
                                 <div>
+                                    <input type="hidden" name="quizr_question[<?php echo $key; ?>][question_id]"
+                                        value="<?php echo esc_html( $q->ID); ?>"
+                                     />
                                     <label class="quizr-qs-card__answer-label">
                                         <input
                                             type="radio"
-                                            name="quizr"
+                                            name="quizr_question[<?php echo $key; ?>][answer_id]"
                                             value="<?php echo esc_html( $value->id ); ?>"
                                         />
                                         <?php echo $value->description; ?>

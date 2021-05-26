@@ -104,6 +104,7 @@ class Quizr_Public {
 		 * class.
 		 */
 
+        wp_enqueue_script( $this->plugin_name . 'shortcode-question-set', plugin_dir_url( __FILE__ ) . 'js/quizr-public-shortcode-question-set.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/quizr-public.js', array( 'jquery' ), $this->version, false );
 
 	}

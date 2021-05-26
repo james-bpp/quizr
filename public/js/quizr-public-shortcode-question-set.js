@@ -15,4 +15,36 @@ class Quizr_Public_Shortcode_Question_Set {
         console.log(this.element);
     }
 
+    init(){
+
+    }
+
+    updateHtml(){
+
+    }
+
+    showCard(){
+
+    }
+
+    hideAllCards(){
+
+    }
+
+    showArrows(){
+
+    }
+
+    showNextArrow(){
+
+    }
+
+    showPreviousArrow(){
+
+    }
+
+    updatePips(){
+        
+    }
+
 }
